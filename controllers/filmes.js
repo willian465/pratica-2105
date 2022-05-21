@@ -12,12 +12,11 @@ db.read()
   });
 
 const controller = {
-  showList: function (req, res) {
-    //console.log(db.data);
+  listarFilmes: function (req, res) {
     res.status(200).json(db.data.filmes);
   },
 
-  BuscarFilmePorCodigo: function (req, res) {
+  buscarFilmePorCodigo: function (req, res) {
     if (req.params.id == undefined || req.params.id <= 0) {
       return res
         .status(400)
@@ -26,19 +25,12 @@ const controller = {
     let filme = db.data.filmes[req.params.id];
     res.status(200).json(filme);
   },
-  add: function (req, res) {
+  salvarNovoFilme: function (req, res) {
     console.log("recebi requisição...");
     let { id, nomeFilme, dataEstreia, duracao } = req.body;
-    db.data.filmes[id] = { nomeFilme, dataEstreia, duracao };
+    db.data.filmes[id] = { id, nomeFilme, dataEstreia, duracao };
     db.write();
-    res.status(200).json(db.data.filmes);
-  },
-  update: function (req, res) {
-    console.log("recebi requisição...");
-    let { id, nomeFilme, dataEstreia, duracao } = req.body;
-    db.data.filmes[id] = { nomeFilme, dataEstreia, duracao };
-    db.write();
-    res.status(200).json(db.data.filmes);
+    res.status(200).json(db.data.filmes[id]);
   },
 };
 

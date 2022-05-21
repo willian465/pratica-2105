@@ -1,16 +1,35 @@
 {
   "filmes": {
-    "01": {
-      "nomeFilme": "Vento levou a saúde do Wander",
-      "dataEstreia": "01/10/2023",
-      "duracao": "02:25"
-    },
-    "02": {
+    "1": {
+      "id": "1",
       "nomeFilme": "Seu vagabundo",
       "dataEstreia": "01/01/2023",
       "duracao": "02:15"
     },
-    "": {}
+    "2": {
+      "id": "2",
+      "nomeFilme": "E o vento levou",
+      "dataEstreia": "01/03/2023",
+      "duracao": "02:13"
+    },
+    "3": {
+      "id": "3",
+      "nomeFilme": "A volta dos que nunca foram",
+      "dataEstreia": "01/03/2023",
+      "duracao": "02:13"
+    },
+    "4": {
+      "id": "4",
+      "nomeFilme": "A origem",
+      "dataEstreia": "01/03/2024",
+      "duracao": "02:13"
+    },
+    "5": {
+      "id": "5",
+      "nomeFilme": "O pato feio",
+      "dataEstreia": "01/05/2024",
+      "duracao": "02:00"
+    }
   },
   "produtos": {
     "01": {
@@ -20,10 +39,19 @@
     }
   },
   "musicas": {
-    "01": {
+    "1": {
+      "id": "1",
+      "nomeMusica": "Onde vivi",
+      "duracao": "00:03:12s",
+      "idioma": "Português",
+      "autor": "João Almeida"
+    },
+    "2": {
+      "id": "2",
       "nomeMusica": "Vida boa",
-      "duracao": "01:32mim",
-      "idioma": "Português"
+      "duracao": "00:03:47s",
+      "idioma": "Português",
+      "autor": "João Almeida"
     }
   }
 }
