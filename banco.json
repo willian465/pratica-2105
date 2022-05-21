@@ -1,0 +1,29 @@
+{
+  "filmes": {
+    "01": {
+      "nomeFilme": "Vento levou a saúde do Wander",
+      "dataEstreia": "01/10/2023",
+      "duracao": "02:25"
+    },
+    "02": {
+      "nomeFilme": "Seu vagabundo",
+      "dataEstreia": "01/01/2023",
+      "duracao": "02:15"
+    },
+    "": {}
+  },
+  "produtos": {
+    "01": {
+      "nomeProduto": "Carteira",
+      "preco": 1000,
+      "itensEstoque": 15
+    }
+  },
+  "musicas": {
+    "01": {
+      "nomeMusica": "Vida boa",
+      "duracao": "01:32mim",
+      "idioma": "Português"
+    }
+  }
+}
