@@ -12,8 +12,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-import bandRoute from "./routes/produtos.js";
-bandRoute(app, config);
+import produtosRoute from "./routes/produtos.js";
+produtosRoute(app, config);
 
 import filmesRoute from "./routes/filmes.js";
 filmesRoute(app, config);
