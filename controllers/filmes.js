@@ -4,9 +4,7 @@ const adapter = new JSONFile("./banco.json");
 const db = new Low(adapter);
 
 db.read()
-  .then(function () {
-    console.log("banco carregado");
-  })
+  .then(function () {})
   .catch(function (e) {
     console.log(e);
   });
@@ -26,7 +24,11 @@ const controller = {
     res.status(200).json(filme);
   },
   salvarNovoFilme: function (req, res) {
-    console.log("recebi requisição...");
+    if (req.body.id == undefined) {
+      return res
+        .status(400)
+        .json({ Message: "Dados não informados para criar novo filme" });
+    }
     let { id, nomeFilme, dataEstreia, duracao } = req.body;
     db.data.filmes[id] = { id, nomeFilme, dataEstreia, duracao };
     db.write();

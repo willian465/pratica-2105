@@ -4,31 +4,34 @@ const adapter = new JSONFile("./banco.json");
 const db = new Low(adapter);
 
 db.read()
-  .then(function () {
-    console.log("banco carregado");
-  })
+  .then(function () {})
   .catch(function (e) {
     console.log(e);
   });
 
 const controller = {
-  showList: function (req, res) {
-    console.log(db.data);
+  listarProdutos: function (req, res) {
     res.status(200).json(db.data.produtos);
   },
-  add: function (req, res) {
-    console.log("recebi requisição...");
-    let { id, nomeProduto, preco, itensEstoque } = req.body;
-    db.data.produtos[id] = { nomeProduto, preco, itensEstoque };
-    db.write();
-    res.status(200).json(db.data.bandasrock);
+  buscarProdutoPorCodigo: function (req, res) {
+    if (req.params.id == undefined || req.params.id <= 0) {
+      return res
+        .status(400)
+        .json({ Message: "Valor inválido para a busca de produtos" });
+    }
+    let produto = db.data.produtos[req.params.id];
+    res.status(200).json(produto);
   },
-  update: function (req, res) {
-    console.log("recebi requisição...");
+  adicionarProdutos: function (req, res) {
+    if (req.body.id == undefined) {
+      return res
+        .status(400)
+        .json({ Message: "Dados não informados para criar novo produto" });
+    }
     let { id, nomeProduto, preco, itensEstoque } = req.body;
-    db.data.produtos[id] = { nomeProduto, preco, itensEstoque };
+    db.data.produtos[id] = { id, nomeProduto, preco, itensEstoque };
     db.write();
-    res.status(200).json(db.data.bandasrock);
+    res.status(200).json(db.data.produtos[id]);
   },
 };
 

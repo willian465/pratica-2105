@@ -7,7 +7,9 @@ export default function (app, config) {
     .route(config.get("server.path_root") + nomeRota)
     .get(controller.listarMusicas);
 
-  app.route(config.get("server.path_root") + nomeRota).post(controller.add);
+  app
+    .route(config.get("server.path_root") + nomeRota)
+    .post(controller.adicionarMusica);
 
   app
     .route(config.get("server.path_root") + nomeRota + "/:id")

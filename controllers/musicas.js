@@ -4,9 +4,7 @@ const adapter = new JSONFile("./banco.json");
 const db = new Low(adapter);
 
 db.read()
-  .then(function () {
-    console.log("banco carregado");
-  })
+  .then(function () {})
   .catch(function (e) {
     console.log(e);
   });
@@ -24,19 +22,16 @@ const controller = {
     let musica = db.data.musicas[req.params.id];
     res.status(200).json(musica);
   },
-  add: function (req, res) {
-    console.log("recebi requisição...");
+  adicionarMusica: function (req, res) {
+    if (req.body.id == undefined) {
+      return res
+        .status(400)
+        .json({ Message: "Dados não informados para criar nova música" });
+    }
     let { id, nomeMusica, duracao, idioma, genero, autor } = req.body;
     db.data.musicas[id] = { id, nomeMusica, duracao, idioma, genero, autor };
     db.write();
     res.status(200).json(db.data.musicas[id]);
-  },
-  update: function (req, res) {
-    console.log("recebi requisição...");
-    let { id, nomeMusica, duracao, idioma } = req.body;
-    db.data.produtos[id] = { nomeMusica, duracao, idioma };
-    db.write();
-    res.status(200).json(db.data.musicas);
   },
 };
 

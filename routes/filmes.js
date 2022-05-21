@@ -14,6 +14,4 @@ export default function (app, config) {
   app
     .route(config.get("server.path_root") + nomeRota + "/:id")
     .get(controller.buscarFilmePorCodigo);
-
-  console.log(`Rota [${nomeRota}] carregada...`);
 }

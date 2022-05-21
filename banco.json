@@ -2,40 +2,42 @@
   "filmes": {
     "1": {
       "id": "1",
-      "nomeFilme": "Seu vagabundo",
-      "dataEstreia": "01/01/2023",
-      "duracao": "02:15"
+      "nomeFilme": "Superman",
+      "dataEstreia": "01/05/2024",
+      "duracao": "02:15mim"
     },
     "2": {
       "id": "2",
-      "nomeFilme": "E o vento levou",
-      "dataEstreia": "01/03/2023",
-      "duracao": "02:13"
+      "nomeFilme": "Batman",
+      "dataEstreia": "01/05/2024",
+      "duracao": "02:15mim"
     },
     "3": {
       "id": "3",
-      "nomeFilme": "A volta dos que nunca foram",
-      "dataEstreia": "01/03/2023",
-      "duracao": "02:13"
+      "nomeFilme": "Homen de ferro",
+      "dataEstreia": "01/07/2024",
+      "duracao": "02:32mim"
     },
-    "4": {
-      "id": "4",
-      "nomeFilme": "A origem",
-      "dataEstreia": "01/03/2024",
-      "duracao": "02:13"
-    },
-    "5": {
-      "id": "5",
-      "nomeFilme": "O pato feio",
-      "dataEstreia": "01/05/2024",
-      "duracao": "02:00"
-    }
+    "undefined": {}
   },
   "produtos": {
-    "01": {
-      "nomeProduto": "Carteira",
-      "preco": 1000,
-      "itensEstoque": 15
+    "1": {
+      "id": 1,
+      "nomeProduto": "Mesa",
+      "preco": 350,
+      "itensEstoque": 60
+    },
+    "2": {
+      "id": 2,
+      "nomeProduto": "Notebook Dell",
+      "preco": 4.25,
+      "itensEstoque": 123
+    },
+    "3": {
+      "id": 3,
+      "nomeProduto": "Máquina de lavar",
+      "preco": 1.75,
+      "itensEstoque": 23
     }
   },
   "musicas": {
@@ -50,6 +52,13 @@
       "id": "2",
       "nomeMusica": "Vida boa",
       "duracao": "00:03:47s",
+      "idioma": "Português",
+      "autor": "João Almeida"
+    },
+    "3": {
+      "id": "3",
+      "nomeMusica": "A luta de um jovem",
+      "duracao": "00:02:43s",
       "idioma": "Português",
       "autor": "João Almeida"
     }
