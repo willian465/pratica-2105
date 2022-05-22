@@ -11,7 +11,11 @@ db.read()
 
 const controller = {
   listarFilmes: function (req, res) {
-    res.status(200).json(db.data.filmes);
+    let response = {
+      rota: "Rota para listar todos os filmes",
+      dados: db.data.filmes,
+    };
+    res.status(200).json(response);
   },
 
   buscarFilmePorCodigo: function (req, res) {
@@ -21,7 +25,11 @@ const controller = {
         .json({ Message: "Valor inválido para a busca de filmes" });
     }
     let filme = db.data.filmes[req.params.id];
-    res.status(200).json(filme);
+    let response = {
+      rota: "Rota de buscar filmes por código",
+      dados: filme,
+    };
+    res.status(200).json(response);
   },
   salvarNovoFilme: function (req, res) {
     if (req.body.id == undefined) {
@@ -32,7 +40,11 @@ const controller = {
     let { id, nomeFilme, dataEstreia, duracao } = req.body;
     db.data.filmes[id] = { id, nomeFilme, dataEstreia, duracao };
     db.write();
-    res.status(200).json(db.data.filmes[id]);
+    let response = {
+      rota: "Rota salvar um novo fime",
+      dados: db.data.filmes[id],
+    };
+    res.status(200).json(response);
   },
 };
 
