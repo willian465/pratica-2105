@@ -42,7 +42,7 @@ const controller = {
     db.write();
     let response = {
       rota: "Rota salvar um novo produto",
-      dados: db.data.filmes[id],
+      dados: db.data.produtos[id],
     };
 
     res.status(200).json(response);
