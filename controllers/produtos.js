@@ -11,7 +11,11 @@ db.read()
 
 const controller = {
   listarProdutos: function (req, res) {
-    res.status(200).json(db.data.produtos);
+    let response = {
+      rota: "Rota para listar todos os produtos",
+      dados: db.data.produtos,
+    };
+    res.status(200).json(response);
   },
   buscarProdutoPorCodigo: function (req, res) {
     if (req.params.id == undefined || req.params.id <= 0) {
@@ -20,7 +24,12 @@ const controller = {
         .json({ Message: "Valor inválido para a busca de produtos" });
     }
     let produto = db.data.produtos[req.params.id];
-    res.status(200).json(produto);
+
+    let response = {
+      rota: "Rota de buscar pruduto por código",
+      dados: produto,
+    };
+    res.status(200).json(response);
   },
   adicionarProdutos: function (req, res) {
     if (req.body.id == undefined) {
@@ -31,7 +40,12 @@ const controller = {
     let { id, nomeProduto, preco, itensEstoque } = req.body;
     db.data.produtos[id] = { id, nomeProduto, preco, itensEstoque };
     db.write();
-    res.status(200).json(db.data.produtos[id]);
+    let response = {
+      rota: "Rota salvar um novo produto",
+      dados: db.data.filmes[id],
+    };
+
+    res.status(200).json(response);
   },
 };
 

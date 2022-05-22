@@ -41,7 +41,7 @@ const controller = {
     db.data.filmes[id] = { id, nomeFilme, dataEstreia, duracao };
     db.write();
     let response = {
-      rota: "Rota salvar um novo fime",
+      rota: "Rota salvar um novo filme",
       dados: db.data.filmes[id],
     };
     res.status(200).json(response);
